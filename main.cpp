@@ -65,18 +65,18 @@ int main()
 
             if ( gpio_read(&gasDetectorPinObj) == 1 || gpio_read(&overTempDetectorPinObj) == 1){
                 alarmState = ON;
-                printf("gasDetector: %d\n", gpio_read(&gasDetectorPinObj);
-                printf("overTempDetector: %d\n", gpio_read(&overTempDetectorPinObj);
-                printf("alarmLED: %d\n", gpio_read(&alarmLedPinObj);
+                printf("gasDetector: %d\n", gpio_read(&gasDetectorPinObj));
+                printf("overTempDetector: %d\n", gpio_read(&overTempDetectorPinObj));
+                printf("alarmLED: %d\n", gpio_read(&alarmLedPinObj));
             }
 
             gpio_write(&alarmLedPinObj, alarmState);
 
             if ( gpio_read(&alarmOffButtonPinObj) == 1) {
                 alarmState = OFF;
-                printf("gasDetector: %d\n", gpio_read(&gasDetectorPinObj);
-                printf("overTempDetector: %d\n", gpio_read(&overTempDetectorPinObj);
-                printf("alarmLED: %d\n", gpio_read(&alarmLedPinObj);
+                printf("gasDetector: %d\n", gpio_read(&gasDetectorPinObj));
+                printf("overTempDetector: %d\n", gpio_read(&overTempDetectorPinObj));
+                printf("alarmLED: %d\n", gpio_read(&alarmLedPinObj));
             }
         }
     #endif
