@@ -37,6 +37,9 @@ int main()
         }
     #endif
 
+    //Como ventaja es menos abstacto y el entendimiento del programa es mayor en cuanto a saber que hace a bajo nivel
+    //Como desventaja es claramente mas sencillo utilizar clases de C++, ahorrando codigo y siendo mas claro
+
     #if(TEST_X == TEST_C)
         PinName gasDetectorPin = D2;
         PinName overTempDetectorPin = D3;
@@ -60,16 +63,20 @@ int main()
 
         while (true) {
 
-            //int gasDetector = gpio_read(&gasDetectorPinObj);
-
             if ( gpio_read(&gasDetectorPinObj) == 1 || gpio_read(&overTempDetectorPinObj) == 1){
                 alarmState = ON;
+                printf("gasDetector: %d\n", gpio_read(&gasDetectorPinObj);
+                printf("overTempDetector: %d\n", gpio_read(&overTempDetectorPinObj);
+                printf("alarmLED: %d\n", gpio_read(&alarmLedPinObj);
             }
 
             gpio_write(&alarmLedPinObj, alarmState);
 
             if ( gpio_read(&alarmOffButtonPinObj) == 1) {
                 alarmState = OFF;
+                printf("gasDetector: %d\n", gpio_read(&gasDetectorPinObj);
+                printf("overTempDetector: %d\n", gpio_read(&overTempDetectorPinObj);
+                printf("alarmLED: %d\n", gpio_read(&alarmLedPinObj);
             }
         }
     #endif
